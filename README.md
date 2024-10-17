@@ -38,23 +38,23 @@ Then the program needs to print out all the currencies available to convert to, 
 - `Foreign currencies available for conversion are: `
 - `EUR GBP JPY INR AUD CAD CHF CNY SEK NZD MXN`
 - You CANNOT just hardcode that string of currencies. You need to reference the dictionary I give you (e.g. if the dictionary were to ever have another currency added, your code should still work without you changing your print statement).
-- You can print the currency names all on one line or on separate lines, it doesn't matter. But you might find it a fun mini challenge to figure how to get them to all print out on one line.
+- You can print the currency names all on one line or on separate lines, it doesn't matter. But you might find it a fun mini challenge to figure out how to get them to all print out on one line.
 
 Then the program will ask the user: 
 - `Please enter a target currency (e.g., EUR, GBP): ` 
-- Make it so that even if the user enters a corectly spelled currency in lowercase or with extra space before or after, it would still work. Test case 1 specifically will enter a lowercase input with extra spaces before and after, and that should be considered a valid input.
+- Make it so that even if the user enters a correctly spelled currency in lowercase or with extra space before or after, it would still work. Test case 1 specifically will enter a lowercase input with extra spaces before and after, and that should be considered a valid input.
 
-Your program should then convert the amount in US dollars to an amount in whatever 
-currency was entered. 
+Your program should then convert the amount in US dollars to an amount in whatever currency was entered. 
 - Do this by multiplying the amount of US dollars by the exchange rate listed in the provided conversion_rates dictionary.
 - For example, if they entered 50 for the amount of dollars, and EUR for the currency, the converted amount would be: 
     - `50 * 0.93`, or `46.5`
 - To get the exchange rate of the currency entered, you MUST use code like this:
     - `specific_conversion_rate = conversion_rates[currency]`
-    - The individual variable names can be whatever you want, but you must directly access the dictionary using square brackets. You CANNOT use the .get() function to get the conversion rate, like conversion_rates.get(currency). Normally, you could do this any way you want on an assignment, but we want the program to trigger a specific Exception (a KeyError) that will only happen if we try to access the dictionary using square brackets. This is to practice using try/except. You will lose points if you use .get() on this specific assignment.
+    - The individual variable names can be whatever you want, but you must directly access the dictionary using square brackets. You CANNOT use the .get() function to get the conversion rate, like conversion_rates.get(currency). Normally, you could do this any way you want on an assignment, but we want the program to trigger a specific Exception (a KeyError) that will only happen if we try to access the dictionary using square brackets. The point of this assignment is to practice using try/except. You will lose points if you use .get() or another way of grabbing the value on this specific assignment.
 - Then the program should print out a message with the original US amount and what it is equal to in the other currency (rounded to the second decimal), like this: 
-    - “50.00 USD is equal to 46.50 EUR”
-    - Depending on the way you round to the second decimal, it may display slightly differently, but the tests should work no matter which method you use for rounding.
+    - `<rounded dollar amount> USD is equal to <rounded foreign amount> <foreign currency abbreviation>`
+    - For example, `50.00 USD is equal to 46.50 EUR`
+    - Depending on the way you round to the second decimal, it may display slightly differently, but the automated tests should work no matter which method you use for rounding.
 
 However, the point of this assignment is to practice properly handling exceptions. There are 2 specific exceptions that I want you to catch, though you should also include a 3rd except statement for any other possible exceptions, just in case. 
 
@@ -62,12 +62,12 @@ You need to catch a `ValueError` exception, which would occur when trying to con
 - If an invalid value for a float is entered, you should catch the exception and print out: 
     - `<dollar amound> is not a valid number. Please try again.` 
         - Note, you may or may not run into trouble including the `<dollar amount>` that the user entered in the error message that you print out. Figuring that out is one of the little challenges of this assignment.
-    - Then restart gathering inputs from the start.
+    - Then, restart gathering inputs from the start. You should continually ask for a dollar amount until a proper one is provided.
 
 You also need to catch a KeyError exception, which would occur when trying to access the conversion_rates dictionary with an input that doesn’t match a key in the dictionary. 
 - If an invalid value for a currency is entered, you should catch the exception and print out: 
     -`<entered currency variable> is not a valid currency. Please try again.` 
-- Then ask the user again to enter a target currency (until a valid target currency is printed).
+- Then ask the user again to enter a target currency (and keep asking until a valid target currency is entered).
     - Note, DO NOT ask the user to enter a dollar amount again in this case. Just keep asking them for the target currency. You can see the example output for an example of this.
 
 You should also catch any other exception after the above two. Note that this exception handler shouldn’t ever actually trigger when running your program, but it is a good habit to get into to catch anything you weren’t expecting. It would also save your program in the event of something incredibly rare occuring, such as your computer running low on memory while the program is running, etc. If this were to trigger, you should print out the Exception, like this: 
