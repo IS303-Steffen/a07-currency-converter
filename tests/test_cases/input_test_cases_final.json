@@ -1,0 +1,351 @@
+[
+    {
+        "id_input_test_case": 1,
+        "input_test_case_description": "Valid input for dollars and currency",
+        "inputs": [
+            "100",
+            "MXN"
+        ],
+        "input_prompts": [
+            "Enter an amount in US dollars: ",
+            "\nPlease enter a target currency (e.g., EUR, GBP): "
+        ],
+        "printed_messages": [
+            "Foreign currencies available for conversion are: ",
+            "EUR",
+            "GBP",
+            "JPY",
+            "INR",
+            "AUD",
+            "CAD",
+            "CHF",
+            "CNY",
+            "SEK",
+            "NZD",
+            "MXN",
+            "100.00 USD is equal to 1800.00 MXN"
+        ],
+        "invalid_input_prompts": [],
+        "invalid_printed_messages": [
+            "HELLO is not a valid currency. Please try again.",
+            "25.50 USD is equal to 20.66 GBP",
+            "WUT is not a valid currency. Please try again.",
+            "2.00 USD is equal to 266.00 JPY",
+            "Bucks is not a valid number. Please try again.",
+            "USA is not a valid currency. Please try again.",
+            "6000.00 USD is equal to 495000.00 INR",
+            "30.50 USD is equal to 218.08 CNY",
+            "2 dollars is not a valid number. Please try again.",
+            "dogecoin is not a valid number. Please try again."
+        ],
+        "bools": {},
+        "ints": {},
+        "strings": {
+            "currency_name": "MXN",
+            "currency": "MXN"
+        },
+        "floats": {
+            "dollar_amount": 100.0,
+            "specific_conversion_rate": 18.0,
+            "converted_amount": 1800.0
+        },
+        "lists": {},
+        "dicts": {
+            "conversion_rates": {
+                "EUR": 0.93,
+                "GBP": 0.81,
+                "JPY": 133.0,
+                "INR": 82.5,
+                "AUD": 1.48,
+                "CAD": 1.36,
+                "CHF": 0.92,
+                "CNY": 7.15,
+                "SEK": 10.5,
+                "NZD": 1.62,
+                "MXN": 18.0
+            }
+        },
+        "example_output": "Enter an amount in US dollars: 100\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): MXN\n100.00 USD is equal to 1800.00 MXN"
+    },
+    {
+        "id_input_test_case": 2,
+        "input_test_case_description": "Valid inputs for dollar and currency, but with space before and after each input, as well as lowercased currency.",
+        "inputs": [
+            "  30.5  ",
+            " cny "
+        ],
+        "input_prompts": [
+            "Enter an amount in US dollars: ",
+            "\nPlease enter a target currency (e.g., EUR, GBP): "
+        ],
+        "printed_messages": [
+            "Foreign currencies available for conversion are: ",
+            "EUR",
+            "GBP",
+            "JPY",
+            "INR",
+            "AUD",
+            "CAD",
+            "CHF",
+            "CNY",
+            "SEK",
+            "NZD",
+            "MXN",
+            "30.50 USD is equal to 218.08 CNY"
+        ],
+        "invalid_input_prompts": [],
+        "invalid_printed_messages": [
+            "HELLO is not a valid currency. Please try again.",
+            "25.50 USD is equal to 20.66 GBP",
+            "WUT is not a valid currency. Please try again.",
+            "2.00 USD is equal to 266.00 JPY",
+            "Bucks is not a valid number. Please try again.",
+            "USA is not a valid currency. Please try again.",
+            "6000.00 USD is equal to 495000.00 INR",
+            "2 dollars is not a valid number. Please try again.",
+            "dogecoin is not a valid number. Please try again.",
+            "100.00 USD is equal to 1800.00 MXN"
+        ],
+        "bools": {},
+        "ints": {},
+        "strings": {
+            "currency_name": "MXN",
+            "currency": "CNY"
+        },
+        "floats": {
+            "dollar_amount": 30.5,
+            "specific_conversion_rate": 7.15,
+            "converted_amount": 218.07500000000002
+        },
+        "lists": {},
+        "dicts": {
+            "conversion_rates": {
+                "EUR": 0.93,
+                "GBP": 0.81,
+                "JPY": 133.0,
+                "INR": 82.5,
+                "AUD": 1.48,
+                "CAD": 1.36,
+                "CHF": 0.92,
+                "CNY": 7.15,
+                "SEK": 10.5,
+                "NZD": 1.62,
+                "MXN": 18.0
+            }
+        },
+        "example_output": "Enter an amount in US dollars:   30.5  \nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP):  cny \n30.50 USD is equal to 218.08 CNY"
+    },
+    {
+        "id_input_test_case": 3,
+        "input_test_case_description": "Using an improper dollar amount",
+        "inputs": [
+            "2 dollars",
+            "2",
+            "JPY"
+        ],
+        "input_prompts": [
+            "Enter an amount in US dollars: ",
+            "\nPlease enter a target currency (e.g., EUR, GBP): "
+        ],
+        "printed_messages": [
+            "2 dollars is not a valid number. Please try again.",
+            "Foreign currencies available for conversion are: ",
+            "EUR",
+            "GBP",
+            "JPY",
+            "INR",
+            "AUD",
+            "CAD",
+            "CHF",
+            "CNY",
+            "SEK",
+            "NZD",
+            "MXN",
+            "2.00 USD is equal to 266.00 JPY"
+        ],
+        "invalid_input_prompts": [],
+        "invalid_printed_messages": [
+            "HELLO is not a valid currency. Please try again.",
+            "25.50 USD is equal to 20.66 GBP",
+            "WUT is not a valid currency. Please try again.",
+            "Bucks is not a valid number. Please try again.",
+            "USA is not a valid currency. Please try again.",
+            "6000.00 USD is equal to 495000.00 INR",
+            "30.50 USD is equal to 218.08 CNY",
+            "dogecoin is not a valid number. Please try again.",
+            "100.00 USD is equal to 1800.00 MXN"
+        ],
+        "bools": {},
+        "ints": {},
+        "strings": {
+            "currency_name": "MXN",
+            "currency": "JPY"
+        },
+        "floats": {
+            "dollar_amount": 2.0,
+            "specific_conversion_rate": 133.0,
+            "converted_amount": 266.0
+        },
+        "lists": {},
+        "dicts": {
+            "conversion_rates": {
+                "EUR": 0.93,
+                "GBP": 0.81,
+                "JPY": 133.0,
+                "INR": 82.5,
+                "AUD": 1.48,
+                "CAD": 1.36,
+                "CHF": 0.92,
+                "CNY": 7.15,
+                "SEK": 10.5,
+                "NZD": 1.62,
+                "MXN": 18.0
+            }
+        },
+        "example_output": "Enter an amount in US dollars: 2 dollars\n2 dollars is not a valid number. Please try again.\nEnter an amount in US dollars: 2\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): JPY\n2.00 USD is equal to 266.00 JPY"
+    },
+    {
+        "id_input_test_case": 4,
+        "input_test_case_description": "Using an improper currency name",
+        "inputs": [
+            "6000",
+            "HELLO",
+            "6000",
+            "INR"
+        ],
+        "input_prompts": [
+            "Enter an amount in US dollars: ",
+            "\nPlease enter a target currency (e.g., EUR, GBP): "
+        ],
+        "printed_messages": [
+            "Foreign currencies available for conversion are: ",
+            "EUR",
+            "GBP",
+            "JPY",
+            "INR",
+            "AUD",
+            "CAD",
+            "CHF",
+            "CNY",
+            "SEK",
+            "NZD",
+            "MXN",
+            "HELLO is not a valid currency. Please try again.",
+            "6000.00 USD is equal to 495000.00 INR"
+        ],
+        "invalid_input_prompts": [],
+        "invalid_printed_messages": [
+            "25.50 USD is equal to 20.66 GBP",
+            "WUT is not a valid currency. Please try again.",
+            "2.00 USD is equal to 266.00 JPY",
+            "Bucks is not a valid number. Please try again.",
+            "USA is not a valid currency. Please try again.",
+            "30.50 USD is equal to 218.08 CNY",
+            "2 dollars is not a valid number. Please try again.",
+            "dogecoin is not a valid number. Please try again.",
+            "100.00 USD is equal to 1800.00 MXN"
+        ],
+        "bools": {},
+        "ints": {},
+        "strings": {
+            "currency_name": "MXN",
+            "currency": "INR"
+        },
+        "floats": {
+            "dollar_amount": 6000.0,
+            "specific_conversion_rate": 82.5,
+            "converted_amount": 495000.0
+        },
+        "lists": {},
+        "dicts": {
+            "conversion_rates": {
+                "EUR": 0.93,
+                "GBP": 0.81,
+                "JPY": 133.0,
+                "INR": 82.5,
+                "AUD": 1.48,
+                "CAD": 1.36,
+                "CHF": 0.92,
+                "CNY": 7.15,
+                "SEK": 10.5,
+                "NZD": 1.62,
+                "MXN": 18.0
+            }
+        },
+        "example_output": "Enter an amount in US dollars: 6000\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): HELLO\nHELLO is not a valid currency. Please try again.\nEnter an amount in US dollars: 6000\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): INR\n6000.00 USD is equal to 495000.00 INR"
+    },
+    {
+        "id_input_test_case": 5,
+        "input_test_case_description": "Using improper dollar amounts and currency names multiple times",
+        "inputs": [
+            "dogecoin",
+            "25",
+            "WUT",
+            "Bucks",
+            "34.7",
+            "USA",
+            "25.5",
+            "GBP"
+        ],
+        "input_prompts": [
+            "Enter an amount in US dollars: ",
+            "\nPlease enter a target currency (e.g., EUR, GBP): "
+        ],
+        "printed_messages": [
+            "dogecoin is not a valid number. Please try again.",
+            "Foreign currencies available for conversion are: ",
+            "EUR",
+            "GBP",
+            "JPY",
+            "INR",
+            "AUD",
+            "CAD",
+            "CHF",
+            "CNY",
+            "SEK",
+            "NZD",
+            "MXN",
+            "WUT is not a valid currency. Please try again.",
+            "Bucks is not a valid number. Please try again.",
+            "USA is not a valid currency. Please try again.",
+            "25.50 USD is equal to 20.66 GBP"
+        ],
+        "invalid_input_prompts": [],
+        "invalid_printed_messages": [
+            "HELLO is not a valid currency. Please try again.",
+            "2.00 USD is equal to 266.00 JPY",
+            "6000.00 USD is equal to 495000.00 INR",
+            "30.50 USD is equal to 218.08 CNY",
+            "2 dollars is not a valid number. Please try again.",
+            "100.00 USD is equal to 1800.00 MXN"
+        ],
+        "bools": {},
+        "ints": {},
+        "strings": {
+            "currency_name": "MXN",
+            "currency": "GBP"
+        },
+        "floats": {
+            "dollar_amount": 25.5,
+            "specific_conversion_rate": 0.81,
+            "converted_amount": 20.655
+        },
+        "lists": {},
+        "dicts": {
+            "conversion_rates": {
+                "EUR": 0.93,
+                "GBP": 0.81,
+                "JPY": 133.0,
+                "INR": 82.5,
+                "AUD": 1.48,
+                "CAD": 1.36,
+                "CHF": 0.92,
+                "CNY": 7.15,
+                "SEK": 10.5,
+                "NZD": 1.62,
+                "MXN": 18.0
+            }
+        },
+        "example_output": "Enter an amount in US dollars: dogecoin\ndogecoin is not a valid number. Please try again.\nEnter an amount in US dollars: 25\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): WUT\nWUT is not a valid currency. Please try again.\nEnter an amount in US dollars: Bucks\nBucks is not a valid number. Please try again.\nEnter an amount in US dollars: 34.7\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): USA\nUSA is not a valid currency. Please try again.\nEnter an amount in US dollars: 25.5\nForeign currencies available for conversion are: \nEUR\nGBP\nJPY\nINR\nAUD\nCAD\nCHF\nCNY\nSEK\nNZD\nMXN\n\nPlease enter a target currency (e.g., EUR, GBP): GBP\n25.50 USD is equal to 20.66 GBP"
+    }
+]

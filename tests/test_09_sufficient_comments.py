@@ -1,12 +1,12 @@
 max_score = 5 # This value is pulled by yml_generator.py to assign a score to this test.
 import re
-from conftest import default_module_to_test, format_error_message, exception_message_for_students
+from conftest import default_module_to_test, module_to_test_2, format_error_message, exception_message_for_students
 
-def test_06_sufficient_comments():
+def test_09_sufficient_comments():
     try:
-        required_num_comments = 7
+        required_num_comments = 10
         num_comments = 0
-        modules_to_open = [default_module_to_test]
+        modules_to_open = [default_module_to_test, module_to_test_2]
 
         # Regex to match single-line comments (#) and multi-line comments (''' ''' or """ """)
         # . is any character except new line
