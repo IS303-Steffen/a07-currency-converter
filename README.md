@@ -78,7 +78,7 @@ You need to handle a `ValueError` exception, which would occur when trying to co
     - Then, restart gathering inputs from the start. You should continually ask for a dollar amount until a proper one is provided.
 
 ### Improper currency key
-You also need to catch a `KeyError` exception, which would occur when trying to access the `conversion_rates` dictionary with an input that doesn’t match a key in the dictionary (during step 3-4 of the logical flow). That means that when you
+You also need to catch a `KeyError` exception, which would occur when trying to access the `conversion_rates` dictionary with an input that doesn’t match a key in the dictionary (during step 3-4 of the logical flow).
 - To get a `KeyError`exception to naturally raise, you MUST use code like this:
     - `specific_conversion_rate = conversion_rates[currency]`
       - The individual variable names can be whatever you want, but you must directly access the dictionary using square brackets. You CANNOT use the .get() function to get the conversion rate, like `conversion_rates.get(currency)`. Normally, you could do this any way you want on an assignment, but we want the program to trigger a specific Exception (a `KeyError`) that will only happen if we try to access the dictionary using square brackets. The point of this assignment is to practice using try/except. You will lose points if you use .get() or another way of grabbing the value in the `a08_currency_converter_exceptions.py` file.
