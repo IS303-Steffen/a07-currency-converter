@@ -18,69 +18,99 @@ jobs:
       with:
         python-version: 3.12.6
     - name: Install dependencies
-      run: python -m pip install --upgrade pip && pip install pandas openpyxl pytest pytest-subtests 'black<=22.3.0' 'tomli>=1.1.0' 'timeout-decorator~=0.5.0'
-    - name: tests/test_01_input_prompts.py
-      id: tests-test-01-input-prompts-py
+      run: python -m pip install --upgrade pip && pip install pytest pytest-subtests 'black<=22.3.0' 'tomli>=1.1.0' 'timeout-decorator~=0.5.0'
+    - name: tests/test_01_input_prompts_exceptions.py
+      id: tests-test-01-input-prompts-exceptions-py
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: test-01-input-prompts
+        test-name: test-01-input-prompts-exceptions
         setup-command: ''
-        command: python -m pytest -v tests/test_01_input_prompts.py
+        command: python -m pytest -v tests/test_01_input_prompts_exceptions.py
         timeout: 30
         max-score: 10
-    - name: tests/test_02_printed_messages.py
-      id: tests-test-02-printed-messages-py
+    - name: tests/test_02_input_prompts_defensive.py
+      id: tests-test-02-input-prompts-defensive-py
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: test-02-printed-messages
+        test-name: test-02-input-prompts-defensive
         setup-command: ''
-        command: python -m pytest -v tests/test_02_printed_messages.py
+        command: python -m pytest -v tests/test_02_input_prompts_defensive.py
         timeout: 30
-        max-score: 20
-    - name: tests/test_03_value_error_raised.py
-      id: tests-test-03-value-error-raised-py
+        max-score: 10
+    - name: tests/test_03_printed_messages_exceptions.py
+      id: tests-test-03-printed-messages-exceptions-py
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: test-03-value-error-raised
+        test-name: test-03-printed-messages-exceptions
         setup-command: ''
-        command: python -m pytest -v tests/test_03_value_error_raised.py
+        command: python -m pytest -v tests/test_03_printed_messages_exceptions.py
         timeout: 30
-        max-score: 25
-    - name: tests/test_04_key_error_raised.py
-      id: tests-test-04-key-error-raised-py
+        max-score: 10
+    - name: tests/test_04_printed_messages_defensive.py
+      id: tests-test-04-printed-messages-defensive-py
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: test-04-key-error-raised
+        test-name: test-04-printed-messages-defensive
         setup-command: ''
-        command: python -m pytest -v tests/test_04_key_error_raised.py
+        command: python -m pytest -v tests/test_04_printed_messages_defensive.py
         timeout: 30
-        max-score: 25
-    - name: tests/test_05_general_exception_handler_present.py
-      id: tests-test-05-general-exception-handler-present-py
+        max-score: 10
+    - name: tests/test_05_value_error_raised_exceptions.py
+      id: tests-test-05-value-error-raised-exceptions-py
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: test-05-general-exception-handler-present
+        test-name: test-05-value-error-raised-exceptions
         setup-command: ''
-        command: python -m pytest -v tests/test_05_general_exception_handler_present.py
+        command: python -m pytest -v tests/test_05_value_error_raised_exceptions.py
         timeout: 30
         max-score: 15
-    - name: tests/test_06_sufficient_comments.py
-      id: tests-test-06-sufficient-comments-py
+    - name: tests/test_06_key_error_raised_exceptions.py
+      id: tests-test-06-key-error-raised-exceptions-py
       uses: classroom-resources/autograding-command-grader@v1
       with:
-        test-name: test-06-sufficient-comments
+        test-name: test-06-key-error-raised-exceptions
         setup-command: ''
-        command: python -m pytest -v tests/test_06_sufficient_comments.py
+        command: python -m pytest -v tests/test_06_key_error_raised_exceptions.py
+        timeout: 30
+        max-score: 15
+    - name: tests/test_07_no_if_statements_present_exceptions.py
+      id: tests-test-07-no-if-statements-present-exceptions-py
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: test-07-no-if-statements-present-exceptions
+        setup-command: ''
+        command: python -m pytest -v tests/test_07_no_if_statements_present_exceptions.py
+        timeout: 30
+        max-score: 15
+    - name: tests/test_08_no_try_except_statements_present_defensive.py
+      id: tests-test-08-no-try-except-statements-present-defensive-py
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: test-08-no-try-except-statements-present-defensive
+        setup-command: ''
+        command: python -m pytest -v tests/test_08_no_try_except_statements_present_defensive.py
+        timeout: 30
+        max-score: 10
+    - name: tests/test_09_sufficient_comments.py
+      id: tests-test-09-sufficient-comments-py
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: test-09-sufficient-comments
+        setup-command: ''
+        command: python -m pytest -v tests/test_09_sufficient_comments.py
         timeout: 30
         max-score: 5
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        TESTS-TEST-01-INPUT-PROMPTS-PY_RESULTS: ${{steps.tests-test-01-input-prompts-py.outputs.result}}
-        TESTS-TEST-02-PRINTED-MESSAGES-PY_RESULTS: ${{steps.tests-test-02-printed-messages-py.outputs.result}}
-        TESTS-TEST-03-VALUE-ERROR-RAISED-PY_RESULTS: ${{steps.tests-test-03-value-error-raised-py.outputs.result}}
-        TESTS-TEST-04-KEY-ERROR-RAISED-PY_RESULTS: ${{steps.tests-test-04-key-error-raised-py.outputs.result}}
-        TESTS-TEST-05-GENERAL-EXCEPTION-HANDLER-PRESENT-PY_RESULTS: ${{steps.tests-test-05-general-exception-handler-present-py.outputs.result}}
-        TESTS-TEST-06-SUFFICIENT-COMMENTS-PY_RESULTS: ${{steps.tests-test-06-sufficient-comments-py.outputs.result}}
+        TESTS-TEST-01-INPUT-PROMPTS-EXCEPTIONS-PY_RESULTS: ${{steps.tests-test-01-input-prompts-exceptions-py.outputs.result}}
+        TESTS-TEST-02-INPUT-PROMPTS-DEFENSIVE-PY_RESULTS: ${{steps.tests-test-02-input-prompts-defensive-py.outputs.result}}
+        TESTS-TEST-03-PRINTED-MESSAGES-EXCEPTIONS-PY_RESULTS: ${{steps.tests-test-03-printed-messages-exceptions-py.outputs.result}}
+        TESTS-TEST-04-PRINTED-MESSAGES-DEFENSIVE-PY_RESULTS: ${{steps.tests-test-04-printed-messages-defensive-py.outputs.result}}
+        TESTS-TEST-05-VALUE-ERROR-RAISED-EXCEPTIONS-PY_RESULTS: ${{steps.tests-test-05-value-error-raised-exceptions-py.outputs.result}}
+        TESTS-TEST-06-KEY-ERROR-RAISED-EXCEPTIONS-PY_RESULTS: ${{steps.tests-test-06-key-error-raised-exceptions-py.outputs.result}}
+        TESTS-TEST-07-NO-IF-STATEMENTS-PRESENT-EXCEPTIONS-PY_RESULTS: ${{steps.tests-test-07-no-if-statements-present-exceptions-py.outputs.result}}
+        TESTS-TEST-08-NO-TRY-EXCEPT-STATEMENTS-PRESENT-DEFENSIVE-PY_RESULTS: ${{steps.tests-test-08-no-try-except-statements-present-defensive-py.outputs.result}}
+        TESTS-TEST-09-SUFFICIENT-COMMENTS-PY_RESULTS: ${{steps.tests-test-09-sufficient-comments-py.outputs.result}}
       with:
-        runners: tests-test-01-input-prompts-py,tests-test-02-printed-messages-py,tests-test-03-value-error-raised-py,tests-test-04-key-error-raised-py,tests-test-05-general-exception-handler-present-py,tests-test-06-sufficient-comments-py
+        runners: tests-test-01-input-prompts-exceptions-py,tests-test-02-input-prompts-defensive-py,tests-test-03-printed-messages-exceptions-py,tests-test-04-printed-messages-defensive-py,tests-test-05-value-error-raised-exceptions-py,tests-test-06-key-error-raised-exceptions-py,tests-test-07-no-if-statements-present-exceptions-py,tests-test-08-no-try-except-statements-present-defensive-py,tests-test-09-sufficient-comments-py
