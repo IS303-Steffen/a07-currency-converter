@@ -93,8 +93,8 @@ You also need to catch a `KeyError` exception, which would occur when trying to 
 In `a08_currency_converter_defensive.py` you cannot have and `try`/`except` statements, and no exceptions should be raised. Instead, you should use several if statements to ensure that no errors occur.
 
 ### Improper dollar amount
-You need to check if the input from the user can be a valid `float` before converting it. Try using the `.isdigit()` function.
-- `.isdigit()` works with strings, like `dollar_amount.isdigit()` and returns `True` if the string only has numbers in it. Note, however, that this function doesn't recognize decimal numbers as being digits, so `30.5` would return as `False`. You can get around this by combining it with `.replace()` to get rid of the decimal when checking if it is a digit. For example, `dollar_amount.replace(".", "").isdigit()` will return `True` with a number like `30.5`. The automated tests don't check for negative numbers, but if you want to make it work with negative numbers too, feel free to add that functionality.
+You need to check if the input from the user can be a valid `float` before converting it. Try using the `.isdecimal()` function.
+- `.isdecimal()` works with strings, like `dollar_amount.isdecimal()` and returns `True` if the string only has numbers in it. Note, however, that this function doesn't recognize decimal numbers as being digits, so `30.5` would return as `False`. You can get around this by combining it with `.replace()` to get rid of the decimal when checking if it is a digit. For example, `dollar_amount.replace(".", "").isdecimal()` will return `True` with a number like `30.5`. The automated tests don't check for negative numbers, but if you want to make it work with negative numbers too, feel free to add that functionality.
 - If an invalid value for a float is entered, you should print out: 
     - `<dollar input> is not a valid number. Please try again.`
       - For example, `three bucks is not a valid number. Please try again.`
