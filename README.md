@@ -104,7 +104,7 @@ You need to check if the input from the user can be a valid `float` before conve
 You also need to ensure that the inputted currency actually exists in the `conversion_rates` dictionary. You might find the dictionary `.get()` function useful. You could also use `in` with an if statement. How you do it is up to you.
 - When an invalid value for a currency is entered, you should print out: 
   - `<entered currency variable> is not a valid currency. Please try again.` 
-    - For example, `three bucks is not a valid number. Please try again.`
+    - For example, `LOL is not a valid currency. Please try again.`
   - Then, restart gathering inputs from the very beginning, meaning ask for a dollar amount again.
     - Please don't write it so that you only ask for a currency again. That is a great idea, but I wrote the automated tests to assume the user would start from the very beginning, so just code it that way even if you'd prefer to do it another way. 
 
