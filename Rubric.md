@@ -40,7 +40,7 @@ The tests will ignore spacing, capitalization, and punctuation, but you will fai
         <td>3. Printed Messages - Exceptions File</td>
         <td>
         <b>Input test cases used:</b> 1-5<br><br>
-        Your printed output must be the same as the expected output of each input test case. This includes the correct BMI calculations and BMI categories.
+        Your printed output must be the same as the expected output of each input test case.
         <br>
         <br>
         See the <code>descriptions_of_test_cases</code> folder for expected printed messages for each input test case.       
