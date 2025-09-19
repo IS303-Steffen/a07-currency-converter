@@ -1,4 +1,4 @@
-#### Assignment 8
+#### Assignment 7
 # Currency Converter
 You’ll be writing a python program to practice error handling in 2 different ways: exception handling, and defensive programming.
 
