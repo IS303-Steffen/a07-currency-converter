@@ -21,7 +21,7 @@ The tests will ignore spacing, capitalization, and punctuation, but you will fai
         Your input prompts must be the same as the expected input prompts of each input test case. 
         <br>
         <br>
-        See the <code>descriptions_ot_test_cases</code> folder for expected input prompts for each input test case.
+        See the <code>descriptions_of_test_cases</code> folder for expected input prompts for each input test case.
         </td> 
         <td style="text-align: center">10</td>
     </tr>
@@ -32,7 +32,7 @@ The tests will ignore spacing, capitalization, and punctuation, but you will fai
         Your input prompts must be the same as the expected input prompts of each input test case. 
         <br>
         <br>
-        See the <code>descriptions_ot_test_cases</code> folder for expected input prompts for each input test case.
+        See the <code>descriptions_of_test_cases</code> folder for expected input prompts for each input test case.
         </td> 
         <td style="text-align: center">10</td>
     </tr>
@@ -50,11 +50,11 @@ The tests will ignore spacing, capitalization, and punctuation, but you will fai
         <tr style="text-align: left">
         <td>4. Printed Messages - Defensive File</td>
         <td>
-        <b>Input test cases used:</b> 1, 2, 4, 6<br><br>
+        <b>Input test cases used:</b> 1-5<br><br>
         Your code must store the inputted friend names and hobbies in a dictionary variable, with the friend names as the key and the hobbies as the values. It doesn't matter what you call the variable.
         <br>
         <br>
-        See the <code>descriptions_ot_test_cases</code> folder for inputs used in each test case to see what your dictionaries should hold.    
+        See the <code>descriptions_of_test_cases</code> folder for inputs used in each test case to see what your dictionaries should hold.    
         </td>
         <td style="text-align: center">10</td>
     </tr>

@@ -4,6 +4,7 @@
 Using improper dollar amounts and currency names multiple times
 
 ## Inputs
+The inputs below (without the quotes) will be entered one by one each time an `input()` function is found in your code.
 ```
 1: "dogecoin"
 2: "25"
@@ -15,34 +16,8 @@ Using improper dollar amounts and currency names multiple times
 8: "GBP"
 ```
 
-## Expected Input Prompts
-```
-1: "Enter an amount in US dollars: "
-2: "Please enter a target currency (e.g., EUR, GBP): "
-```
-
-## Expected Printed Messages
-```
-1: "dogecoin is not a valid number. Please try again."
-2: "Foreign currencies available for conversion are: "
-3: "EUR"
-4: "GBP"
-5: "JPY"
-6: "INR"
-7: "AUD"
-8: "CAD"
-9: "CHF"
-10: "CNY"
-11: "SEK"
-12: "NZD"
-13: "MXN"
-14: "WUT is not a valid currency. Please try again."
-15: "Bucks is not a valid number. Please try again."
-16: "USA is not a valid currency. Please try again."
-17: "25.50 USD is equal to 20.66 GBP"
-```
-
-## Example Output **(combined Inputs, Input Prompts, and Printed Messages)**
+## Example Output
+This is what your terminal should look like if you use the inputs above when running your code.
 ```
 Enter an amount in US dollars: dogecoin
 dogecoin is not a valid number. Please try again.

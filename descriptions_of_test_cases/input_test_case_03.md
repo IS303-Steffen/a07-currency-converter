@@ -4,37 +4,15 @@
 Using an improper dollar amount
 
 ## Inputs
+The inputs below (without the quotes) will be entered one by one each time an `input()` function is found in your code.
 ```
 1: "2 dollars"
 2: "2"
 3: "JPY"
 ```
 
-## Expected Input Prompts
-```
-1: "Enter an amount in US dollars: "
-2: "Please enter a target currency (e.g., EUR, GBP): "
-```
-
-## Expected Printed Messages
-```
-1: "2 dollars is not a valid number. Please try again."
-2: "Foreign currencies available for conversion are: "
-3: "EUR"
-4: "GBP"
-5: "JPY"
-6: "INR"
-7: "AUD"
-8: "CAD"
-9: "CHF"
-10: "CNY"
-11: "SEK"
-12: "NZD"
-13: "MXN"
-14: "2.00 USD is equal to 266.00 JPY"
-```
-
-## Example Output **(combined Inputs, Input Prompts, and Printed Messages)**
+## Example Output
+This is what your terminal should look like if you use the inputs above when running your code.
 ```
 Enter an amount in US dollars: 2 dollars
 2 dollars is not a valid number. Please try again.

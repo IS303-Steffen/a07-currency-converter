@@ -3,10 +3,10 @@
 You’ll be writing a python program to practice error handling in 2 different ways: exception handling, and defensive programming.
 
 Normally, we don't care about the exact process you write your programs in, but in this case the point of this assignment is to recognize the difference between 2 different styles of error handling. So you're going to write the same program in 2 different ways. You have 2 .py files:
-- `a08_currency_converter_exceptions.py`
-- `a08_currency_converter_defensive.py`
+- `a07_currency_converter_exceptions.py`
+- `a07_currency_converter_defensive.py`
 
-In the first, you'll use exception handling (using `try` and `except` statements) while in the other you'll use defensive programming (no `try` or `except` allowed, you'll just use if statements instead). Make sure to follow the instructions closely to make sure you get all of the points in the automated tests.
+In the first, you'll use exception handling (using `try` and `except` statements) while in the other you'll use defensive programming (no `try` or `except` allowed, you'll just use `if` statements instead). Make sure to follow the instructions closely to make sure you get all of the points in the automated tests.
 
 In both files, the user will enter an amount of money in US dollars, and the program will convert that into another currency using the exchange rates provided below. The program should handle any errors caused during entry of the data and accessing the dictionary and continually ask for valid entry until one is provided. 
 
@@ -18,6 +18,7 @@ None, but feel free to make any functions you want if you think it'll make your 
 
 ## Provided Code:
 See the starting files for a dictionary that you'll need to reference. If you accidentally delete it, here it is again:
+
  ```
 conversion_rates = { 
   "EUR": 0.93, # Euro 
@@ -33,6 +34,7 @@ conversion_rates = {
   "MXN": 18.0, # Mexican Peso 
   } 
 ```
+
 ## Logical Flow (same for both .py files):
 Both of your .py files are going to do the same basic logic, which is given below. After this section, descriptions for how each file should perform its error handling are given (for example, what happens if an improper dollar amount or currency is inputted). When first writing out your code, you can just assume that proper inputs will be given until you get to that point in the instructions.
 
@@ -68,7 +70,7 @@ Then the program should print out a message with the original US amount and what
 
 ## Error handling for the `exceptions.py` file
 
-The point of this assignment is to practice properly handling errors. In `a08_currency_converter_exceptions.py` there are 2 specific exceptions that I want you to handle by using try/except. If you do this correctly, there is no need for this file to have any if statements. In fact, one of the automated tests will check that there are no if statements in this file. If you're not sure how to accomplish this without if statements, reach out to the TAs.
+The point of this assignment is to practice properly handling errors. In `a07_currency_converter_exceptions.py` there are 2 specific exceptions that I want you to handle by using try/except. If you do this correctly, there is no need for this file to have any if statements. In fact, one of the automated tests will check that there are no if statements in this file. If you're not sure how to accomplish this without if statements, reach out to the TAs.
 
 ### Improper dollar amount
 You need to handle a `ValueError` exception, which would occur when trying to convert the amount of US Dollars into a `float`. This error would occur during step 1 of the logical flow. 
@@ -81,16 +83,16 @@ You need to handle a `ValueError` exception, which would occur when trying to co
 You also need to catch a `KeyError` exception, which would occur when trying to access the `conversion_rates` dictionary with an input that doesn’t match a key in the dictionary (during step 3-4 of the logical flow).
 - To get a `KeyError`exception to naturally raise, you MUST use code like this:
     - `specific_conversion_rate = conversion_rates[currency]`
-      - The individual variable names can be whatever you want, but you must directly access the dictionary using square brackets. You CANNOT use the .get() function to get the conversion rate, like `conversion_rates.get(currency)`. Normally, you could do this any way you want on an assignment, but we want the program to trigger a specific Exception (a `KeyError`) that will only happen if we try to access the dictionary using square brackets. The point of this assignment is to practice using try/except. You will lose points if you use .get() or another way of grabbing the value in the `a08_currency_converter_exceptions.py` file.
+      - The individual variable names can be whatever you want, but you must directly access the dictionary using square brackets. You CANNOT use the .get() function to get the conversion rate, like `conversion_rates.get(currency)`. Normally, you could do this any way you want on an assignment, but we want the program to trigger a specific Exception (a `KeyError`) that will only happen if we try to access the dictionary using square brackets. The point of this assignment is to practice using try/except. You will lose points if you use .get() or another way of grabbing the value in the `a07_currency_converter_exceptions.py` file.
 - When an invalid value for a currency is entered, you should handle the exception and print out: 
   - `<entered currency variable> is not a valid currency. Please try again.`
     - For example, `BLABLA is not a valid currency. Please try again.`
-  - Then, restart gathering inputs from the VERY BEGINNING, meaning ask for a dollar amount again.
+  - IMPORTANT: Then, restart gathering inputs from the VERY BEGINNING, meaning ask for a dollar amount again.
     - Please don't write it so that you only ask for a currency again. That is a great idea, but I wrote the automated tests to assume the user would start from the very beginning, so just code it that way even if you'd prefer to do it another way. 
 
 
 ## Error handling for the `defensive.py` file
-In `a08_currency_converter_defensive.py` you cannot have and `try`/`except` statements, and no exceptions should be raised. Instead, you should use several if statements to ensure that no errors occur.
+In `a07_currency_converter_defensive.py` you cannot have and `try`/`except` statements, and no exceptions should be raised. Instead, you should use several if statements to ensure that no errors occur.
 
 ### Improper dollar amount
 You need to check if the input from the user can be a valid `float` before converting it. Try using the `.isdecimal()` function.
@@ -105,16 +107,20 @@ You also need to ensure that the inputted currency actually exists in the `conve
 - When an invalid value for a currency is entered, you should print out: 
   - `<entered currency variable> is not a valid currency. Please try again.` 
     - For example, `LOL is not a valid currency. Please try again.`
-  - Then, restart gathering inputs from the very beginning, meaning ask for a dollar amount again.
+  - IMPORTANT: Then, restart gathering inputs from the VERY BEGINNING, meaning ask for a dollar amount again.
     - Please don't write it so that you only ask for a currency again. That is a great idea, but I wrote the automated tests to assume the user would start from the very beginning, so just code it that way even if you'd prefer to do it another way. 
 
 When you finish, run the automated tests to make sure you pass all the tests and get full credit, and then push up your code to your GitHub repository.
 
 ## Note for future assignments
-For any future assignment that requires you to handle a potential error, you can choose how to handle it according to whichever preference you have, whether that be with a defensive approach, exception handling, or a combination of the two, whichever you prefer.
+For any future assignment that requires you to handle a potential error, you can choose how to handle it according to whichever preference you have, whether that be with a defensive approach, exception handling, or a combination of the two. Use whichever you prefer.
 
-## Grading Rubric
-See the Rubric.md file. Remember to right click and select "Open Preview" to see it formatted so it is readable.
+## Rubric
+- See `RUBRIC.md` for details on each of the tests you're scored on.
+- To see what score you'll receive, run the tests using the testing tab (it looks like a beaker).
+    - In the testing tab, press `Configure Python Tests`, then choose `pytest`, then `tests`, and then press the `Run Tests` button.
+        - If you accidentally choose the wrong options for `Configure Python Tests`, to choose again, go to `View` > `Command Palette` and then type `Python: Configure Tests` and hit enter. Then choose the options above again.
+- To see your results and any error messages, right click the `TEST_RESULTS_SUMMARY.md` file and choose `Open Preview`.
 
 ## Example Output
 This is an example of proper inputs provided, so no exceptions are thrown:
